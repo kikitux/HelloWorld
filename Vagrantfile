@@ -11,11 +11,11 @@ for x in curl wget htop gcc++ ; do
   sudo apt-get install -y $x
 done
 
-[ -f cmake-3.2.3-Linux-x86_64.sh ] || curl -O cmake-3.2.3-Linux-x86_64.sh http://www.cmake.org/files/v3.2/cmake-3.2.3-Linux-x86_64.sh
 
 if [ -d cmake-3.2.3-Linux-x86_64 ]; then
   echo "cmake found"
 else
+  [ -f cmake-3.2.3-Linux-x86_64.sh ] || curl -O cmake-3.2.3-Linux-x86_64.sh http://www.cmake.org/files/v3.2/cmake-3.2.3-Linux-x86_64.sh
   sh cmake-3.2.3-Linux-x86_64.sh --skip-license --include-subdir
 fi
 
