@@ -24,12 +24,12 @@ $toolchain=<<SCRIPT
 pushd /vagrant
 #for c++11 we need g++-4.8
 sudo apt-get install -y software-properties-common python-software-properties
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test 2>/dev/null
 sudo apt-get update
 sudo apt-get install -y gcc-4.8 g++-4.8
 
 #remove default gcc alternative, add 4.8
-sudo update-alternatives --remove-all gcc
+sudo update-alternatives --remove-all gcc 2>/dev/null
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 40 --slave /usr/bin/g++ g++ /usr/bin/g++-4.8
 
 #cmake-3.2
