@@ -71,4 +71,4 @@ $
 
 ### TODO
 
-Use `docker` to run the code in multiple machines
+Use `docker` to run the code in multiple OS
