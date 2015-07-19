@@ -17,3 +17,4 @@ int main() {
 }
 ```
 
+![CLion](https://www.dropbox.com/s/bloq05domxtftva/Screenshot%202015-07-19%2016.18.15.png?dl=1)
