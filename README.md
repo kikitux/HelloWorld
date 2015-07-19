@@ -23,11 +23,13 @@ int main() {
 
 This example include a `Vagrantfile` that will setup a linux VM using Vagrant
 
-In this example, the script will create a temp dir, and compile and run the code in the virtual machine
+In this example, the script will create a temp dir inside the VM, and compile and run the code in the virtual machine
 
-At this moment, this is hardcoded to `./HelloWorld`
+At this moment, this is hardcoded to run `./HelloWorld`
 
-After code mofification, you can trigger a new run with:
+First run, do `vagrant up`
+
+After code modification, you can trigger a new run with:
 
 `vagrant provision --provision-with code`
 
@@ -66,3 +68,7 @@ $ vagrant provision --provision-with code
 ==> default: ~
 $
 ```
+
+### TODO
+
+Use `docker` to run the code in multiple machines
