@@ -48,7 +48,7 @@ TEMPDIR="`mktemp -d`"
 cp /vagrant/CMakeLists.txt /vagrant/main.cpp $TEMPDIR
 pushd $TEMPDIR
 /vagrant/cmake-3.2.3-Linux-x86_64/bin/cmake .
-make
+mak
 ./HelloWorld
 popd
 [ -d $TEMPDIR ] && rm -fr $TEMPDIR
@@ -56,8 +56,10 @@ popd
 SCRIPT
 
 Vagrant.configure(2) do |config|
-  config.vm.box = "hashicorp/precise64"
   config.vm.provision "shell", inline: $base
   config.vm.provision "shell", inline: $toolchain
   config.vm.provision "code", type: "shell", privileged: false, inline: $code
+  config.vm.define "precise64", primary: true do |precise64|
+    precise64.vm.box = "hashicorp/precise64"
+  end
 end
