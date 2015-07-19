@@ -48,7 +48,7 @@ TEMPDIR="`mktemp -d`"
 cp /vagrant/CMakeLists.txt /vagrant/main.cpp $TEMPDIR
 pushd $TEMPDIR
 /vagrant/cmake-3.2.3-Linux-x86_64/bin/cmake .
-mak
+make
 ./HelloWorld
 popd
 [ -d $TEMPDIR ] && rm -fr $TEMPDIR
