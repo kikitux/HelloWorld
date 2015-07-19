@@ -6,7 +6,7 @@ Will use this [CLion](https://www.jetbrains.com/clion) software for my study of 
 
 From the book:
 
-```
+```cpp
 #include <iostream>
 
 using namespace std;
