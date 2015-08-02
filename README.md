@@ -25,9 +25,13 @@ This example include a `Vagrantfile` that will setup a linux VM using Vagrant
 
 In this example, the script will create a temp dir inside the VM, and compile and run the code in the virtual machine
 
-At this moment, this is hardcoded to run `./HelloWorld`
-
+The script will find the executable file created, and will run it. On this project is `./HelloWorld`
 First run, do `vagrant up`
+
+At the moment of this writing, this Vagrantfile will start 3 VMs
+- precise64
+- trusty64
+- vivid64
 
 After code modification, you can trigger a new run with:
 
@@ -37,38 +41,91 @@ ie:
 
 ```bash
 $ vagrant provision --provision-with code
-==> default: Running provisioner: code (shell)...
-    default: Running: inline script
-==> default: /tmp/tmp.MqdaCR6715 ~
-==> default: -- The C compiler identification is GNU 4.8.1
-==> default: -- The CXX compiler identification is GNU 4.8.1
-==> default: -- Check for working C compiler: /usr/bin/cc
-==> default: -- Check for working C compiler: /usr/bin/cc -- works
-==> default: -- Detecting C compiler ABI info
-==> default: -- Detecting C compiler ABI info - done
-==> default: -- Detecting C compile features
-==> default: -- Detecting C compile features - done
-==> default: -- Check for working CXX compiler: /usr/bin/c++
-==> default: -- Check for working CXX compiler: /usr/bin/c++ -- works
-==> default: -- Detecting CXX compiler ABI info
-==> default: -- Detecting CXX compiler ABI info - done
-==> default: -- Detecting CXX compile features
-==> default: -- Detecting CXX compile features - done
-==> default: -- Configuring done
-==> default: -- Generating done
-==> default: -- Build files have been written to: /tmp/tmp.MqdaCR6715
-==> default: Scanning dependencies of target HelloWorld
-==> default: [100%] 
-==> default: Building CXX object CMakeFiles/HelloWorld.dir/main.cpp.o
-==> default: Linking CXX executable HelloWorld
-==> default: [100%] 
-==> default: Built target HelloWorld
-==> default: Hello, World, line 1 !
-==> default: Hello, World, line 2 !
-==> default: ~
-$
+$ vagrant provision --provision-with code
+==> precise64: Running provisioner: code (shell)...
+    precise64: Running: inline script
+==> precise64: /tmp/tmp.mxfYnIAfbm ~
+==> precise64: -- The C compiler identification is GNU 4.8.1
+==> precise64: -- The CXX compiler identification is GNU 4.8.1
+==> precise64: -- Check for working C compiler: /usr/bin/cc
+==> precise64: -- Check for working C compiler: /usr/bin/cc -- works
+==> precise64: -- Detecting C compiler ABI info
+==> precise64: -- Detecting C compiler ABI info - done
+==> precise64: -- Detecting C compile features
+==> precise64: -- Detecting C compile features - done
+==> precise64: -- Check for working CXX compiler: /usr/bin/g++
+==> precise64: -- Check for working CXX compiler: /usr/bin/g++ -- works
+==> precise64: -- Detecting CXX compiler ABI info
+==> precise64: -- Detecting CXX compiler ABI info - done
+==> precise64: -- Detecting CXX compile features
+==> precise64: -- Detecting CXX compile features - done
+==> precise64: -- Configuring done
+==> precise64: -- Generating done
+==> precise64: -- Build files have been written to: /tmp/tmp.mxfYnIAfbm
+==> precise64: Scanning dependencies of target HelloWorld
+==> precise64: [ 50%] Building CXX object CMakeFiles/HelloWorld.dir/main.cpp.o
+==> precise64: [100%] Linking CXX executable HelloWorld
+==> precise64: [100%] Built target HelloWorld
+==> precise64: Hello, World, line 1 !
+==> precise64: Hello, World, line 2 !
+
+==> trusty64: Running provisioner: code (shell)...
+    trusty64: Running: inline script
+==> trusty64: /tmp/tmp.ACKLPCta7b ~
+==> trusty64: -- The C compiler identification is GNU 5.1.0
+==> trusty64: -- The CXX compiler identification is GNU 5.1.0
+==> trusty64: -- Check for working C compiler: /usr/bin/cc
+==> trusty64: -- Check for working C compiler: /usr/bin/cc -- works
+==> trusty64: -- Detecting C compiler ABI info
+==> trusty64: -- Detecting C compiler ABI info - done
+==> trusty64: -- Detecting C compile features
+==> trusty64: -- Detecting C compile features - done
+==> trusty64: -- Check for working CXX compiler: /usr/bin/g++
+==> trusty64: -- Check for working CXX compiler: /usr/bin/g++ -- works
+==> trusty64: -- Detecting CXX compiler ABI info
+==> trusty64: -- Detecting CXX compiler ABI info - done
+==> trusty64: -- Detecting CXX compile features
+==> trusty64: -- Detecting CXX compile features - done
+==> trusty64: -- Configuring done
+==> trusty64: -- Generating done
+==> trusty64: -- Build files have been written to: /tmp/tmp.ACKLPCta7b
+==> trusty64: Scanning dependencies of target HelloWorld
+==> trusty64: [ 50%] Building CXX object CMakeFiles/HelloWorld.dir/main.cpp.o
+==> trusty64: [100%] Linking CXX executable HelloWorld
+==> trusty64: [100%] Built target HelloWorld
+==> trusty64: Hello, World, line 1 !
+==> trusty64: Hello, World, line 2 !
+
+==> vivid64: Running provisioner: code (shell)...
+    vivid64: Running: inline script
+==> vivid64: /tmp/tmp.xPA6mRmD3G ~
+==> vivid64: -- The C compiler identification is GNU 5.1.1
+==> vivid64: -- The CXX compiler identification is GNU 5.1.1
+==> vivid64: -- Check for working C compiler: /usr/bin/cc
+==> vivid64: -- Check for working C compiler: /usr/bin/cc -- works
+==> vivid64: -- Detecting C compiler ABI info
+==> vivid64: -- Detecting C compiler ABI info - done
+==> vivid64: -- Detecting C compile features
+==> vivid64: -- Detecting C compile features - done
+==> vivid64: -- Check for working CXX compiler: /usr/bin/g++
+==> vivid64: -- Check for working CXX compiler: /usr/bin/g++ -- works
+==> vivid64: -- Detecting CXX compiler ABI info
+==> vivid64: -- Detecting CXX compiler ABI info - done
+==> vivid64: -- Detecting CXX compile features
+==> vivid64: -- Detecting CXX compile features - done
+==> vivid64: -- Configuring done
+==> vivid64: -- Generating done
+==> vivid64: -- Build files have been written to: /tmp/tmp.xPA6mRmD3G
+==> vivid64: Scanning dependencies of target HelloWorld
+==> vivid64: [ 50%] Building CXX object CMakeFiles/HelloWorld.dir/main.cpp.o
+==> vivid64: [100%] Linking CXX executable HelloWorld
+==> vivid64: [100%] Built target HelloWorld
+==> vivid64: Hello, World, line 1 !
+==> vivid64: Hello, World, line 2 !
+$ 
 ```
+### ChangeLog
+
+Added more OS
 
 ### TODO
-
-Use `docker` to run the code in multiple OS
