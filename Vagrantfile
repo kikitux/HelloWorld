@@ -43,23 +43,37 @@ if [ $? -ne 0 ]; then
 fi
 
 #cmake-3.2
-if [ -d cmake-3.2.3-Linux-x86_64 ]; then
+#if [ -d cmake-3.2.3-Linux-x86_64 ]; then
+#  echo "cmake found"
+#else
+#  [ -f /vagrant/proxy.env ] && source /vagrant/proxy.env
+#  [ -f cmake-3.2.3-Linux-x86_64.sh ] || curl -o cmake-3.2.3-Linux-x86_64.sh http://www.cmake.org/files/v3.2/cmake-3.2.3-Linux-x86_64.sh
+#  sh cmake-3.2.3-Linux-x86_64.sh --skip-license --include-subdir
+#fi
+
+#cmake-3.3
+CMAKE="cmake-3.3.0-Linux-x86_64"
+pushd /usr/local
+if [ -d $CMAKE ]; then
   echo "cmake found"
 else
   [ -f /vagrant/proxy.env ] && source /vagrant/proxy.env
-  [ -f cmake-3.2.3-Linux-x86_64.sh ] || curl -o cmake-3.2.3-Linux-x86_64.sh http://www.cmake.org/files/v3.2/cmake-3.2.3-Linux-x86_64.sh
-  sh cmake-3.2.3-Linux-x86_64.sh --skip-license --include-subdir
+  [ -f /vagrant/$CMAKE.sh ] || curl -o /vagrant/$CMAKE.sh http://www.cmake.org/files/v3.3/$CMAKE.sh
+  sh /vagrant/$CMAKE.sh --skip-license --include-subdir
 fi
+popd
 
 SCRIPT
 
 $code=<<SCRIPT
+#cmake-3.3
+CMAKE="cmake-3.3.0-Linux-x86_64"
 #[ -f /vagrant/proxy.env ] && source /vagrant/proxy.env
 TEMPDIR="`mktemp -d`"
 [ -d $TEMPDIR ] || exit 1
 cp /vagrant/CMakeLists.txt /vagrant/main.cpp $TEMPDIR
 pushd $TEMPDIR
-/vagrant/cmake-3.2.3-Linux-x86_64/bin/cmake .
+/usr/local/$CMAKE/bin/cmake .
 make
 #./HelloWorld
 FILE="`find . -maxdepth 1 -type f -perm -001`"
@@ -67,7 +81,6 @@ $FILE
 echo $?
 popd
 [ -d $TEMPDIR ] && rm -fr $TEMPDIR
-
 SCRIPT
 
 Vagrant.configure(2) do |config|
