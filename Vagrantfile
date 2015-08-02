@@ -89,7 +89,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", inline: $base
   config.vm.provision "shell", inline: $cmake
   config.vm.define "precise64", primary: true do |precise64|
-    precise64.vm.box = "hashicorp/precise64"
+    precise64.vm.box = "ubuntu/precise64"
     precise64.vm.provision "shell", inline: $toolchain48
     precise64.vm.provision "code", type: "shell", privileged: false, inline: $code
   end
@@ -97,5 +97,10 @@ Vagrant.configure(2) do |config|
     trusty64.vm.box = "ubuntu/trusty64"
     trusty64.vm.provision "shell", inline: $toolchain5
     trusty64.vm.provision "code", type: "shell", privileged: false, inline: $code
+  end
+  config.vm.define "vivid64", primary: true do |vivid64|
+    vivid64.vm.box = "ubuntu/vivid64"
+    vivid64.vm.provision "shell", inline: $toolchain5
+    vivid64.vm.provision "code", type: "shell", privileged: false, inline: $code
   end
 end

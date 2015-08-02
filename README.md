@@ -33,14 +33,24 @@ At the moment of this writing, this Vagrantfile will start 3 VMs
 - trusty64
 - vivid64
 
-After code modification, you can trigger a new run with:
+```bash
+$ vagrant status
+Current machine states:
 
-`vagrant provision --provision-with code`
+precise64                 running (virtualbox)
+trusty64                  running (virtualbox)
+vivid64                   running (virtualbox)
+
+This environment represents multiple VMs. The VMs are all listed
+above with their current state.
+$
+```
+
+After code modification, you can trigger a new run of the code as `vagrant provision --provision-with code`
 
 ie:
 
 ```bash
-$ vagrant provision --provision-with code
 $ vagrant provision --provision-with code
 ==> precise64: Running provisioner: code (shell)...
     precise64: Running: inline script
