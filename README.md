@@ -26,7 +26,8 @@ This example include a `Vagrantfile` that will setup a linux VM using Vagrant
 In this example, the script will create a temp dir inside the VM, and compile and run the code in the virtual machine
 
 The script will find the executable file created, and will run it. On this project is `./HelloWorld`
-First run, do `vagrant up`
+
+On first run, do `vagrant up`
 
 At the moment of this writing, this Vagrantfile will start 3 VMs
 - precise64
@@ -46,7 +47,9 @@ above with their current state.
 $
 ```
 
-After code modification, you can trigger a new run of the code as `vagrant provision --provision-with code`
+After code modification, you can trigger a new run of the code as `vagrant provision` to run all the scripts.
+
+On this project, the script that test the code is called `code`, so you can use `vagrant provision --provision-with code`
 
 ie:
 
