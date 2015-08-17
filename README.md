@@ -139,8 +139,15 @@ $ vagrant provision --provision-with code
 ==> vivid64: Hello, World, line 2 !
 $ 
 ```
+### Travis-ci
+
+![travis-ci HelloWorld](https://travis-ci.org/kikitux/HelloWorld.svg)
+
+![travis-ci screenshot](https://www.dropbox.com/s/eo3k6n1okvbrfg7/Screenshot%202015-08-18%2000.00.22.png?dl=1)
+
 ### ChangeLog
 
-Added more OS
+Added more OS to Vagrantfile
+Added travis-ci
 
 ### TODO

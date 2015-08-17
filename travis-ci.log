@@ -1,0 +1,252 @@
+Using worker: worker-linux-docker-dd056134.prod.travis-ci.org:travis-linux-4
+
+travis_fold:start:system_info[0K[33;1mBuild system information[0m
+Build language: cpp
+[34m[1mBuild image provisioning date and time[0m
+Thu Feb  5 15:09:33 UTC 2015
+[34m[1mOperating System Details[0m
+Distributor ID:	Ubuntu
+Description:	Ubuntu 12.04.5 LTS
+Release:	12.04
+Codename:	precise
+[34m[1mLinux Version[0m
+3.13.0-29-generic
+[34m[1mCookbooks Version[0m
+a68419e https://github.com/travis-ci/travis-cookbooks/tree/a68419e
+[34m[1mGCC version[0m
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+[34m[1mLLVM version[0m
+clang version 3.4 (tags/RELEASE_34/final)
+Target: x86_64-unknown-linux-gnu
+Thread model: posix
+[34m[1mPre-installed Ruby versions[0m
+ruby-1.9.3-p551
+[34m[1mPre-installed Node.js versions[0m
+v0.10.36
+[34m[1mPre-installed Go versions[0m
+1.4.1
+[34m[1mRedis version[0m
+redis-server 2.8.19
+[34m[1mriak version[0m
+2.0.2
+[34m[1mMongoDB version[0m
+MongoDB 2.4.12
+[34m[1mCouchDB version[0m
+couchdb 1.6.1
+[34m[1mNeo4j version[0m
+1.9.4
+[34m[1mRabbitMQ Version[0m
+3.4.3
+[34m[1mElasticSearch version[0m
+1.4.0
+[34m[1mInstalled Sphinx versions[0m
+2.0.10
+2.1.9
+2.2.6
+[34m[1mDefault Sphinx version[0m
+2.2.6
+[34m[1mInstalled Firefox version[0m
+firefox 31.0esr
+[34m[1mPhantomJS version[0m
+1.9.8
+[34m[1mant -version[0m
+Apache Ant(TM) version 1.8.2 compiled on December 3 2011
+[34m[1mmvn -version[0m
+Apache Maven 3.2.5 (12a6b3acb947671f09b81f49094c53f426d8cea1; 2014-12-14T17:29:23+00:00)
+Maven home: /usr/local/maven
+Java version: 1.7.0_76, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-oracle/jre
+Default locale: en_US, platform encoding: ANSI_X3.4-1968
+OS name: "linux", version: "3.13.0-29-generic", arch: "amd64", family: "unix"
+travis_fold:end:system_info[0K
+travis_fold:start:git.checkout[0Ktravis_time:start:153aab8a[0K$ git clone --depth=50 --branch=master git://github.com/kikitux/HelloWorld.git kikitux/HelloWorld
+Cloning into 'kikitux/HelloWorld'...
+remote: Counting objects: 144, done.[K
+remote: Compressing objects:   3% (1/31)   [Kremote: Compressing objects:   6% (2/31)   [Kremote: Compressing objects:   9% (3/31)   [Kremote: Compressing objects:  12% (4/31)   [Kremote: Compressing objects:  16% (5/31)   [Kremote: Compressing objects:  19% (6/31)   [Kremote: Compressing objects:  22% (7/31)   [Kremote: Compressing objects:  25% (8/31)   [Kremote: Compressing objects:  29% (9/31)   [Kremote: Compressing objects:  32% (10/31)   [Kremote: Compressing objects:  35% (11/31)   [Kremote: Compressing objects:  38% (12/31)   [Kremote: Compressing objects:  41% (13/31)   [Kremote: Compressing objects:  45% (14/31)   [Kremote: Compressing objects:  48% (15/31)   [Kremote: Compressing objects:  51% (16/31)   [Kremote: Compressing objects:  54% (17/31)   [Kremote: Compressing objects:  58% (18/31)   [Kremote: Compressing objects:  61% (19/31)   [Kremote: Compressing objects:  64% (20/31)   [Kremote: Compressing objects:  67% (21/31)   [Kremote: Compressing objects:  70% (22/31)   [Kremote: Compressing objects:  74% (23/31)   [Kremote: Compressing objects:  77% (24/31)   [Kremote: Compressing objects:  80% (25/31)   [Kremote: Compressing objects:  83% (26/31)   [Kremote: Compressing objects:  87% (27/31)   [Kremote: Compressing objects:  90% (28/31)   [Kremote: Compressing objects:  93% (29/31)   [Kremote: Compressing objects:  96% (30/31)   [Kremote: Compressing objects: 100% (31/31)   [Kremote: Compressing objects: 100% (31/31), done.[K
+remote: Total 144 (delta 16), reused 0 (delta 0), pack-reused 113[K
+Receiving objects:   0% (1/144)   Receiving objects:   1% (2/144)   Receiving objects:   2% (3/144)   Receiving objects:   3% (5/144)   Receiving objects:   4% (6/144)   Receiving objects:   5% (8/144)   Receiving objects:   6% (9/144)   Receiving objects:   7% (11/144)   Receiving objects:   8% (12/144)   Receiving objects:   9% (13/144)   Receiving objects:  10% (15/144)   Receiving objects:  11% (16/144)   Receiving objects:  12% (18/144)   Receiving objects:  13% (19/144)   Receiving objects:  14% (21/144)   Receiving objects:  15% (22/144)   Receiving objects:  16% (24/144)   Receiving objects:  17% (25/144)   Receiving objects:  18% (26/144)   Receiving objects:  19% (28/144)   Receiving objects:  20% (29/144)   Receiving objects:  21% (31/144)   Receiving objects:  22% (32/144)   Receiving objects:  23% (34/144)   Receiving objects:  24% (35/144)   Receiving objects:  25% (36/144)   Receiving objects:  26% (38/144)   Receiving objects:  27% (39/144)   Receiving objects:  28% (41/144)   Receiving objects:  29% (42/144)   Receiving objects:  30% (44/144)   Receiving objects:  31% (45/144)   Receiving objects:  32% (47/144)   Receiving objects:  33% (48/144)   Receiving objects:  34% (49/144)   Receiving objects:  35% (51/144)   Receiving objects:  36% (52/144)   Receiving objects:  37% (54/144)   Receiving objects:  38% (55/144)   Receiving objects:  39% (57/144)   Receiving objects:  40% (58/144)   Receiving objects:  41% (60/144)   Receiving objects:  42% (61/144)   Receiving objects:  43% (62/144)   Receiving objects:  44% (64/144)   Receiving objects:  45% (65/144)   Receiving objects:  46% (67/144)   Receiving objects:  47% (68/144)   Receiving objects:  48% (70/144)   Receiving objects:  49% (71/144)   Receiving objects:  50% (72/144)   Receiving objects:  51% (74/144)   Receiving objects:  52% (75/144)   Receiving objects:  53% (77/144)   Receiving objects:  54% (78/144)   Receiving objects:  55% (80/144)   Receiving objects:  56% (81/144)   Receiving objects:  57% (83/144)   Receiving objects:  58% (84/144)   Receiving objects:  59% (85/144)   Receiving objects:  60% (87/144)   Receiving objects:  61% (88/144)   Receiving objects:  62% (90/144)   Receiving objects:  63% (91/144)   Receiving objects:  64% (93/144)   Receiving objects:  65% (94/144)   Receiving objects:  66% (96/144)   Receiving objects:  67% (97/144)   Receiving objects:  68% (98/144)   Receiving objects:  69% (100/144)   Receiving objects:  70% (101/144)   Receiving objects:  71% (103/144)   Receiving objects:  72% (104/144)   Receiving objects:  73% (106/144)   Receiving objects:  74% (107/144)   Receiving objects:  75% (108/144)   Receiving objects:  76% (110/144)   Receiving objects:  77% (111/144)   Receiving objects:  78% (113/144)   Receiving objects:  79% (114/144)   Receiving objects:  80% (116/144)   Receiving objects:  81% (117/144)   Receiving objects:  82% (119/144)   Receiving objects:  83% (120/144)   Receiving objects:  84% (121/144)   Receiving objects:  85% (123/144)   Receiving objects:  86% (124/144)   Receiving objects:  87% (126/144)   Receiving objects:  88% (127/144)   Receiving objects:  89% (129/144)   Receiving objects:  90% (130/144)   Receiving objects:  91% (132/144)   Receiving objects:  92% (133/144)   Receiving objects:  93% (134/144)   Receiving objects:  94% (136/144)   Receiving objects:  95% (137/144)   Receiving objects:  96% (139/144)   Receiving objects:  97% (140/144)   Receiving objects:  98% (142/144)   Receiving objects:  99% (143/144)   Receiving objects: 100% (144/144)   Receiving objects: 100% (144/144), 28.84 KiB | 0 bytes/s, done.
+Resolving deltas:   0% (0/66)   Resolving deltas:   9% (6/66)   Resolving deltas:  22% (15/66)   Resolving deltas:  40% (27/66)   Resolving deltas:  46% (31/66)   Resolving deltas:  50% (33/66)   Resolving deltas:  51% (34/66)   Resolving deltas:  60% (40/66)   Resolving deltas:  63% (42/66)   Resolving deltas:  65% (43/66)   Resolving deltas:  68% (45/66)   Resolving deltas:  75% (50/66)   Resolving deltas:  89% (59/66)   Resolving deltas:  95% (63/66)   Resolving deltas: 100% (66/66)   Resolving deltas: 100% (66/66), done.
+Checking connectivity... done.
+travis_time:end:153aab8a:start=1439812511074956067,finish=1439812511150133136,duration=75177069[0K$ cd kikitux/HelloWorld
+$ git checkout -qf f49c6bbe6b1ec655749e1df952a0018885c8c638
+travis_fold:end:git.checkout[0Ktravis_fold:start:apt[0K[33;1mAdding APT Sources (BETA)[0m
+$ export DEBIAN_FRONTEND=noninteractive
+travis_time:start:00718be6[0K$ sudo -E apt-add-repository -y "ppa:ubuntu-toolchain-r/test"
+gpg: keyring `/tmp/tmphPVO5N/secring.gpg' created
+gpg: keyring `/tmp/tmphPVO5N/pubring.gpg' created
+gpg: requesting key BA9EF27F from hkp server keyserver.ubuntu.com
+gpg: /tmp/tmphPVO5N/trustdb.gpg: trustdb created
+gpg: key BA9EF27F: public key "Launchpad Toolchain builds" imported
+gpg: Total number processed: 1
+gpg:               imported: 1  (RSA: 1)
+OK
+travis_time:end:00718be6:start=1439812511160440351,finish=1439812513334407803,duration=2173967452[0K[33;1mInstalling APT Packages (BETA)[0m
+$ export DEBIAN_FRONTEND=noninteractive
+travis_time:start:0ade9cd4[0K$ sudo -E apt-get -yq update &>> ~/apt-get-update.log
+travis_time:end:0ade9cd4:start=1439812513338202346,finish=1439812519039163352,duration=5700961006[0Ktravis_time:start:31d0c1f6[0K$ sudo -E apt-get -yq --no-install-suggests --no-install-recommends --force-yes install cmake g++-4.8
+Reading package lists...
+Building dependency tree...
+Reading state information...
+cmake is already the newest version.
+The following extra packages will be installed:
+  cpp-4.8 gcc-4.8 gcc-4.8-base gcc-5-base libasan0 libatomic1 libcloog-isl4
+  libgcc-4.8-dev libgcc1 libgomp1 libisl10 libitm1 libquadmath0
+  libstdc++-4.8-dev libstdc++6 libtsan0
+Suggested packages:
+  gcc-4.8-locales g++-4.8-multilib gcc-4.8-doc libstdc++6-4.8-dbg
+  gcc-4.8-multilib libmudflap0-4.8-dev libgcc1-dbg libgomp1-dbg libitm1-dbg
+  libatomic1-dbg libasan0-dbg libtsan0-dbg libbacktrace1-dbg libquadmath0-dbg
+  libmudflap0-dbg binutils-gold libstdc++-4.8-doc
+The following NEW packages will be installed:
+  cpp-4.8 g++-4.8 gcc-4.8 gcc-4.8-base gcc-5-base libasan0 libatomic1
+  libcloog-isl4 libgcc-4.8-dev libisl10 libitm1 libstdc++-4.8-dev libtsan0
+The following packages will be upgraded:
+  libgcc1 libgomp1 libquadmath0 libstdc++6
+4 upgraded, 13 newly installed, 0 to remove and 209 not upgraded.
+Need to get 27.5 MB of archives.
+After this operation, 69.6 MB of additional disk space will be used.
+Get:1 http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu/ precise/main gcc-5-base amd64 5.1.0-0ubuntu11~12.04.2 [17.5 kB]
+Get:2 http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu/ precise/main libgcc1 amd64 1:5.1.0-0ubuntu11~12.04.2 [44.8 kB]
+Get:3 http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu/ precise/main libstdc++6 amd64 5.1.0-0ubuntu11~12.04.2 [510 kB]
+Get:4 http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu/ precise/main gcc-4.8-base amd64 4.8.1-2ubuntu1~12.04 [16.0 kB]
+Get:5 http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu/ precise/main libasan0 amd64 4.8.1-2ubuntu1~12.04 [76.0 kB]
+Get:6 http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu/ precise/main libatomic1 amd64 5.1.0-0ubuntu11~12.04.2 [10.5 kB]
+Get:7 http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu/ precise/main libisl10 amd64 0.12.2-2~12.04 [530 kB]
+Get:8 http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu/ precise/main libcloog-isl4 amd64 0.18.2-1~12.04 [67.3 kB]
+Get:9 http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu/ precise/main libgomp1 amd64 5.1.0-0ubuntu11~12.04.2 [63.6 kB]
+Get:10 http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu/ precise/main libitm1 amd64 5.1.0-0ubuntu11~12.04.2 [33.5 kB]
+Get:11 http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu/ precise/main libquadmath0 amd64 5.1.0-0ubuntu11~12.04.2 [145 kB]
+Get:12 http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu/ precise/main libtsan0 amd64 5.1.0-0ubuntu11~12.04.2 [309 kB]
+Get:13 http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu/ precise/main cpp-4.8 amd64 4.8.1-2ubuntu1~12.04 [5,835 kB]
+Get:14 http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu/ precise/main libgcc-4.8-dev amd64 4.8.1-2ubuntu1~12.04 [2,792 kB]
+Get:15 http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu/ precise/main gcc-4.8 amd64 4.8.1-2ubuntu1~12.04 [6,609 kB]
+Get:16 http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu/ precise/main libstdc++-4.8-dev amd64 4.8.1-2ubuntu1~12.04 [1,753 kB]
+Get:17 http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu/ precise/main g++-4.8 amd64 4.8.1-2ubuntu1~12.04 [8,707 kB]
+Fetched 27.5 MB in 4s (5,907 kB/s)
+Selecting previously unselected package gcc-5-base.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 71420 files and directories currently installed.)
+Unpacking gcc-5-base (from .../gcc-5-base_5.1.0-0ubuntu11~12.04.2_amd64.deb) ...
+Processing triggers for ccache ...
+Updating symlinks in /usr/lib/ccache ...
+Setting up gcc-5-base (5.1.0-0ubuntu11~12.04.2) ...
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 71427 files and directories currently installed.)
+Preparing to replace libgcc1 1:4.6.3-1ubuntu5 (using .../libgcc1_1%3a5.1.0-0ubuntu11~12.04.2_amd64.deb) ...
+Unpacking replacement libgcc1 ...
+Setting up libgcc1 (1:5.1.0-0ubuntu11~12.04.2) ...
+Processing triggers for libc-bin ...
+ldconfig deferred processing now taking place
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 71427 files and directories currently installed.)
+Preparing to replace libstdc++6 4.6.3-1ubuntu5 (using .../libstdc++6_5.1.0-0ubuntu11~12.04.2_amd64.deb) ...
+Unpacking replacement libstdc++6 ...
+Setting up libstdc++6 (5.1.0-0ubuntu11~12.04.2) ...
+Processing triggers for libc-bin ...
+ldconfig deferred processing now taking place
+Selecting previously unselected package gcc-4.8-base.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 71440 files and directories currently installed.)
+Unpacking gcc-4.8-base (from .../gcc-4.8-base_4.8.1-2ubuntu1~12.04_amd64.deb) ...
+Selecting previously unselected package libasan0.
+Unpacking libasan0 (from .../libasan0_4.8.1-2ubuntu1~12.04_amd64.deb) ...
+Selecting previously unselected package libatomic1.
+Unpacking libatomic1 (from .../libatomic1_5.1.0-0ubuntu11~12.04.2_amd64.deb) ...
+Selecting previously unselected package libisl10.
+Unpacking libisl10 (from .../libisl10_0.12.2-2~12.04_amd64.deb) ...
+Selecting previously unselected package libcloog-isl4.
+Unpacking libcloog-isl4 (from .../libcloog-isl4_0.18.2-1~12.04_amd64.deb) ...
+Preparing to replace libgomp1 4.6.3-1ubuntu5 (using .../libgomp1_5.1.0-0ubuntu11~12.04.2_amd64.deb) ...
+Unpacking replacement libgomp1 ...
+Selecting previously unselected package libitm1.
+Unpacking libitm1 (from .../libitm1_5.1.0-0ubuntu11~12.04.2_amd64.deb) ...
+Preparing to replace libquadmath0 4.6.3-1ubuntu5 (using .../libquadmath0_5.1.0-0ubuntu11~12.04.2_amd64.deb) ...
+Unpacking replacement libquadmath0 ...
+Selecting previously unselected package libtsan0.
+Unpacking libtsan0 (from .../libtsan0_5.1.0-0ubuntu11~12.04.2_amd64.deb) ...
+Selecting previously unselected package cpp-4.8.
+Unpacking cpp-4.8 (from .../cpp-4.8_4.8.1-2ubuntu1~12.04_amd64.deb) ...
+Selecting previously unselected package libgcc-4.8-dev.
+Unpacking libgcc-4.8-dev (from .../libgcc-4.8-dev_4.8.1-2ubuntu1~12.04_amd64.deb) ...
+Selecting previously unselected package gcc-4.8.
+Unpacking gcc-4.8 (from .../gcc-4.8_4.8.1-2ubuntu1~12.04_amd64.deb) ...
+Selecting previously unselected package libstdc++-4.8-dev.
+Unpacking libstdc++-4.8-dev (from .../libstdc++-4.8-dev_4.8.1-2ubuntu1~12.04_amd64.deb) ...
+Selecting previously unselected package g++-4.8.
+Unpacking g++-4.8 (from .../g++-4.8_4.8.1-2ubuntu1~12.04_amd64.deb) ...
+Processing triggers for ccache ...
+Updating symlinks in /usr/lib/ccache ...
+Processing triggers for man-db ...
+Setting up gcc-4.8-base (4.8.1-2ubuntu1~12.04) ...
+Setting up libasan0 (4.8.1-2ubuntu1~12.04) ...
+Setting up libatomic1 (5.1.0-0ubuntu11~12.04.2) ...
+Setting up libisl10 (0.12.2-2~12.04) ...
+Setting up libcloog-isl4 (0.18.2-1~12.04) ...
+Setting up libgomp1 (5.1.0-0ubuntu11~12.04.2) ...
+Setting up libitm1 (5.1.0-0ubuntu11~12.04.2) ...
+Setting up libquadmath0 (5.1.0-0ubuntu11~12.04.2) ...
+Setting up libtsan0 (5.1.0-0ubuntu11~12.04.2) ...
+Setting up cpp-4.8 (4.8.1-2ubuntu1~12.04) ...
+Setting up libgcc-4.8-dev (4.8.1-2ubuntu1~12.04) ...
+Setting up gcc-4.8 (4.8.1-2ubuntu1~12.04) ...
+Setting up libstdc++-4.8-dev (4.8.1-2ubuntu1~12.04) ...
+Setting up g++-4.8 (4.8.1-2ubuntu1~12.04) ...
+Processing triggers for libc-bin ...
+ldconfig deferred processing now taking place
+travis_time:end:31d0c1f6:start=1439812519042851179,finish=1439812537136230492,duration=18093379313[0Ktravis_fold:end:apt[0K
+[33;1mThis job is running on container-based infrastructure, which does not allow use of 'sudo', setuid and setguid executables.[0m
+[33;1mIf you require sudo, add 'sudo: required' to your .travis.yml[0m
+[33;1mSee http://docs.travis-ci.com/user/workers/container-based-infrastructure/ for details.[0m
+
+[33;1mSetting environment variables from .travis.yml[0m
+$ export LANG="en_US.UTF-8"
+
+$ export CXX=g++
+$ export CC=gcc
+$ gcc --version
+gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3
+Copyright (C) 2011 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+travis_fold:start:install[0Ktravis_time:start:0c2ae980[0K$ if [ "${TRAVIS_OS_NAME}" = "linux" ]; then CMAKE="cmake-3.3.0-Linux-x86_64" && curl -o $CMAKE.sh http://www.cmake.org/files/v3.3/$CMAKE.sh && sh $CMAKE.sh --skip-license --include-subdir && export CXX="g++-4.8" && export CC="gcc-4.8" ; fi
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  5 26.6M    5 1369k    0     0  4543k      0  0:00:05 --:--:--  0:00:05 4945k 35 26.6M   35 9659k    0     0  7420k      0  0:00:03  0:00:01  0:00:02 7563k 63 26.6M   63 16.7M    0     0  7457k      0  0:00:03  0:00:02  0:00:01 7535k 89 26.6M   89 23.8M    0     0  7402k      0  0:00:03  0:00:03 --:--:-- 7455k100 26.6M  100 26.6M    0     0  7284k      0  0:00:03  0:00:03 --:--:-- 7332k
+CMake Installer Version: 3.3.0, Copyright (c) Kitware
+This is a self-extracting archive.
+The archive will be extracted to: /home/travis/build/kikitux/HelloWorld
+
+Using target directory: /home/travis/build/kikitux/HelloWorld/cmake-3.3.0-Linux-x86_64
+Extracting, please wait...
+
+Unpacking finished successfully
+travis_time:end:0c2ae980:start=1439812540778203358,finish=1439812545274115667,duration=4495912309[0Ktravis_fold:end:install[0Ktravis_fold:start:before_script[0Ktravis_time:start:03f922cc[0K$ if [ "${TRAVIS_OS_NAME}" = "linux" ]; then export CMAKE="cmake-3.3.0-Linux-x86_64" && $CMAKE/bin/cmake . ; fi
+-- The C compiler identification is GNU 4.8.1
+-- The CXX compiler identification is GNU 4.8.1
+-- Check for working C compiler: /usr/bin/gcc-4.8
+-- Check for working C compiler: /usr/bin/gcc-4.8 -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/g++-4.8
+-- Check for working CXX compiler: /usr/bin/g++-4.8 -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/travis/build/kikitux/HelloWorld
+travis_time:end:03f922cc:start=1439812545277848234,finish=1439812545984178825,duration=706330591[0Ktravis_fold:end:before_script[0Ktravis_time:start:262cf797[0K$ make && find . -maxdepth 1 -type f -perm -001 -exec {} \; && echo $? ;
+[35m[1mScanning dependencies of target HelloWorld[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/HelloWorld.dir/main.cpp.o[0m
+[100%] [32m[1mLinking CXX executable HelloWorld[0m
+[100%] [0mBuilt target HelloWorld[0m
+Hello, World !
+0
+travis_time:end:262cf797:start=1439812545987908644,finish=1439812546268882554,duration=280973910[0K
+[32;1mThe command "make && find . -maxdepth 1 -type f -perm -001 -exec {} \; && echo $? ;" exited with 0.[0m
+
+Done. Your build exited with 0.
