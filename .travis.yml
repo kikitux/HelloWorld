@@ -14,6 +14,7 @@ script:
   && echo $FILE
   && time $FILE
   && echo $?
+  ;
 
 branches:
   only:
