@@ -79,6 +79,7 @@ $code=<<SCRIPT
   /usr/local/$CMAKE/bin/cmake .
   make
   FILE="`find . -maxdepth 1 -type f -perm -001`"
+  echo $FILE
   $FILE
   echo $?
   popd
@@ -86,21 +87,31 @@ $code=<<SCRIPT
 SCRIPT
 
 Vagrant.configure(2) do |config|
+
+  config.vm.provider "virtualbox" do |v|
+    v.memory = 512
+    v.cpus = 1 
+  end
+
   config.vm.provision "shell", inline: $base
   config.vm.provision "shell", inline: $cmake
+
   config.vm.define "precise64", primary: true do |precise64|
     precise64.vm.box = "ubuntu/precise64"
     precise64.vm.provision "shell", inline: $toolchain48
     precise64.vm.provision "code", type: "shell", privileged: false, inline: $code
   end
+
   config.vm.define "trusty64", primary: true do |trusty64|
     trusty64.vm.box = "ubuntu/trusty64"
     trusty64.vm.provision "shell", inline: $toolchain5
     trusty64.vm.provision "code", type: "shell", privileged: false, inline: $code
   end
+
   config.vm.define "vivid64", primary: true do |vivid64|
     vivid64.vm.box = "ubuntu/vivid64"
     vivid64.vm.provision "shell", inline: $toolchain5
     vivid64.vm.provision "code", type: "shell", privileged: false, inline: $code
   end
+
 end

@@ -1,0 +1,20 @@
+language: cpp
+
+compiler:
+  - gcc
+
+before_script:
+  - cmake .
+
+script: make
+
+branches:
+  only:
+    - master
+
+env:
+  - RVM=2.0.0 LANG="en_US.UTF-8"
+
+os:
+  - linux
+  - osx
