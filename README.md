@@ -145,9 +145,11 @@ $
 
 ![travis-ci screenshot](https://www.dropbox.com/s/eo3k6n1okvbrfg7/Screenshot%202015-08-18%2000.00.22.png?dl=1)
 
+[Travis ci log](travis-ci.log)
+
 ### ChangeLog
 
-Added more OS to Vagrantfile
-Added travis-ci
+- Added more OS to Vagrantfile
+- Added travis-ci
 
 ### TODO
