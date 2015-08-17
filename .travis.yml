@@ -1,6 +1,14 @@
 language: cpp
 
-sudo: required
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - cmake
+    - g++-4.8
+
+sudo: false
 
 compiler:
   - gcc
@@ -22,13 +30,7 @@ env:
 
 install:
   - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
-         wget http://www.cmake.org/files/v3.3/cmake-3.3.0-Linux-i386.tar.gz
-      && tar -xzf cmake-3.3.0-Linux-i386.tar.gz
-      && sudo cp -fR cmake-3.3.0-Linux-i386/* /usr
-      && sudo apt-add-repository -y ppa:ubuntu-toolchain-r/test
-      && sudo apt-get -qq update
-      && sudo apt-get -qq install g++-4.8
-      && export CXX="g++-4.8"
+      export CXX="g++-4.8"
       && export CC="gcc-4.8"
       ;
     else
