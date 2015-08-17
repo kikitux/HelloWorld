@@ -34,7 +34,7 @@ env:
 install:
   - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then
       CMAKE="cmake-3.3.0-Linux-x86_64"
-      curl -o /vagrant/$CMAKE.sh http://www.cmake.org/files/v3.3/$CMAKE.sh
+      curl -o $CMAKE.sh http://www.cmake.org/files/v3.3/$CMAKE.sh
       sh $CMAKE.sh --skip-license --include-subdir
       export CXX="g++-4.8"
       export CC="gcc-4.8"
